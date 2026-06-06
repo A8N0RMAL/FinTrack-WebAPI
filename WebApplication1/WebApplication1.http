@@ -1,0 +1,126 @@
+@WebApplication1_HostAddress = http://localhost:5050
+
+### Stock Controller
+
+### GetALL Stocks
+GET {{WebApplication1_HostAddress}}/api/stock/
+Accept: application/json
+
+### Filter Stocks by Query => Symbol or CompanyName
+GET {{WebApplication1_HostAddress}}/api/stock?Symbol=TSLA&CompanyName=Tesla
+Accept: application/json
+
+### SortBy Symbol, default value for sorting IsDescending=false
+GET {{WebApplication1_HostAddress}}/api/stock?SortBy=Symbol&IsDescending=true
+Accept: application/json
+
+### Pagination
+GET {{WebApplication1_HostAddress}}/api/stock?PageNumber=2&PageSize=2 // skip 2 take 2
+Accept: application/json
+
+### Get Stock by Id from Route
+GET {{WebApplication1_HostAddress}}/api/stock/1
+Accept: application/json
+
+### Add Stock
+POST {{WebApplication1_HostAddress}}/api/stock/
+Accept: application/json
+Content-Type: application/json
+
+{
+  "symbol": "TSLA",
+  "companyName": "Tesla Inc.",
+  "purchasePrice": 19900.50,
+  "lastDiv": 1.75,
+  "industry": "Technology",
+  "marketCap": 376000000
+}
+
+### Update Stock
+PUT {{WebApplication1_HostAddress}}/api/stock/7
+Accept: application/json
+Content-Type: application/json
+
+ {
+    "symbol": "MSFT",
+    "companyName": "Microsoft Software LLC",
+    "purchasePrice": 100.00,
+    "lastDiv": 1.20,
+    "industry": "Technology",
+    "marketCap": 234234245
+  }
+
+### Delete Stock
+DELETE {{WebApplication1_HostAddress}}/api/stock/7
+Accept: application/json
+
+
+
+### Comment Controller
+
+### GetALL Comments
+GET {{WebApplication1_HostAddress}}/api/comment/
+Accept: application/json
+
+### GetById
+GET {{WebApplication1_HostAddress}}/api/comment/3
+Accept: application/json
+
+### Add Comment
+POST {{WebApplication1_HostAddress}}/api/comment/2
+Accept: application/json
+Content-Type: application/json
+
+{
+    "Title": "Test Title for Stock 5",
+    "Content": "Test Content for Stock 5"
+}
+
+### Update Comment
+PUT {{WebApplication1_HostAddress}}/api/comment/4
+Accept: application/json
+Content-Type: application/json
+
+{
+    "Title": "Test Title for Stock 5 Updated",
+    "Content": "Test Content for Stock 5 Updated"
+}
+
+### Delete Comment
+Delete {{WebApplication1_HostAddress}}/api/comment/3
+Accept: application/json
+
+
+### Account Controller
+
+### Register
+POST {{WebApplication1_HostAddress}}/api/account/register
+Accept: application/json
+Content-Type: application/json
+
+{
+    "username": "mario",
+    "email": "mario111@gmail.com",
+    "password": "P@ssW0rd_mario111!"
+}
+
+### Login
+# @name loginRequest
+POST {{WebApplication1_HostAddress}}/api/account/login
+Accept: application/json
+Content-Type: application/json
+
+{
+    "username": "mario",
+    "password": "P@ssW0rd_mario111!"
+}
+
+### Variable  
+@token = {{loginRequest.response.body.token}}
+
+### Portfolio Controller
+
+### GetAll
+GET {{WebApplication1_HostAddress}}/api/portfolio/
+Accept: application/json
+Authorization: Bearer Token eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hcmlvMTExQGdtYWlsLmNvbSIsImdpdmVuX25hbWUiOiJtYXJpbyIsIm5iZiI6MTc3OTc3MTU3MCwiZXhwIjoxNzgwMzc2MzcwLCJpYXQiOjE3Nzk3NzE1NzAsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTA1MCIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTA1MCJ9.MKDcc8vmIy69d4sRLrYzzDkNSZxOjwqYfl5Z3z46_jcT6DfioqmotOH65T9fijHG8AtxfiJZ81gibqQNlvMh9Q
