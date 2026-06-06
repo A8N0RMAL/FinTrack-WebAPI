@@ -59,7 +59,7 @@ The project strictly organizes files by separation of concerns:
 
 ---
 
-## 📈 Database Schema (Entity Relationships)
+## Database Schema (Entity Relationships)
 
 * **AppUser ↔ Stock (Many-to-Many):** Managed cleanly via a explicit junction model (`Portfolio`) mapped using Fluent API composite keys.
 * **Stock ↔ Comment (One-to-Many):** Configured with clean navigation properties.
@@ -67,7 +67,7 @@ The project strictly organizes files by separation of concerns:
 
 ---
 
-## 🚦 Getting Started
+## Getting Started
 
 ### Prerequisites
 * .NET 10 SDK
