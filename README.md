@@ -77,7 +77,8 @@ The project strictly organizes files by separation of concerns:
 1. Clone the repository:
    ```bash
    git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)
-  ```
+   
+   ```
 
 2. Navigate to the project directory and restore dependencies:
 
@@ -117,5 +118,3 @@ The project strictly organizes files by separation of concerns:
 
 ```
 6. Access the live Scalar API interactive reference room via: `https://localhost:your-port/scalar/v1`
-
-```
