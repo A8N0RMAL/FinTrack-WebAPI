@@ -4,7 +4,7 @@ A production-ready, high-performance .NET 10 Web API designed for financial stoc
 
 ---
 
-## 🚀 Key Features & Architectural Highlights
+## Key Features & Architectural Highlights
 
 ### 1. Robust Architecture & Design Patterns
 * **Repository Pattern:** Complete decoupling of data access logic from controllers using generic-ready async interfaces (`IStockRepository`, `ICommentRepository`, `IPortfolioRepository`).
@@ -26,7 +26,7 @@ A production-ready, high-performance .NET 10 Web API designed for financial stoc
 
 ---
 
-## 🛠️ Tech Stack & Dependencies
+## Tech Stack & Dependencies
 
 * **Runtime:** .NET 10 (C# 14)
 * **ORM:** Entity Framework Core 10
@@ -36,7 +36,7 @@ A production-ready, high-performance .NET 10 Web API designed for financial stoc
 
 ---
 
-## 📂 System Architecture Breakdown
+## System Architecture Breakdown
 
 The project strictly organizes files by separation of concerns:
 
@@ -53,7 +53,7 @@ The project strictly organizes files by separation of concerns:
 
 ---
 
-## 🔒 Security Practices Implemented
+## Security Practices Implemented
 * **Massive Over-Posting Prevention:** Strictly separating raw database Models from DTOs ensures users cannot inject unexpected properties into the system.
 * **Defensive Model Validation:** Utilizing strong Data Annotations (`[Required]`, `[MinLength]`, `[MaxLength]`, `[Range]`) across all inbound DTOs to enforce severe length restrictions and input boundaries on critical properties like `Symbol`, `Title`, and `PurchasePrice`.
 
